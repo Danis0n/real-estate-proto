@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package user;
+
+service UserService {
+  rpc Create (CreateUserRequest) returns (CreateUserResponse) {}
+  rpc FindAll (FindAllUsersRequest) returns (FindAllUsersResponse) {}
+  rpc FindById (FindOneUserRequest) returns (FindOneUserResponse) {}
+}
+
+message User {
+  string id = 1;
+  string email = 3;
+  string siteLink = 4;
+  string phone = 5;
+  UserInfo userInfo = 6;
+  UserLogin userLogin = 7;
+  string imageUrl = 8;
+}
+
+message UserInfo {
+  string firstName = 1;
+  string lastName = 2;
+  string birthData = 3;
+  string description = 4;
+}
+
+message UserLogin {
+  string login = 1;
+}
+
+message FindOneUserRequest {
+  string id = 1;
+}
+
+message FindOneUserResponse {
+  User user = 1;
+}
+
+message FindAllUsersRequest {
+}
+
+message FindAllUsersResponse {
+  repeated User users = 1;
+}
+
+message CreateUserRequest {
+  string email = 1;
+  string password = 2;
+  string login = 3;
+  string phone = 4;
+  string firstName = 5;
+  string lastName = 6;
+  string dateOfBirth = 7;
+}
+
+message CreateUserResponse {
+  string status = 1;
+  User user = 2;
+}

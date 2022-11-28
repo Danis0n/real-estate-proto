@@ -16,6 +16,7 @@ message User {
   UserInfo userInfo = 6;
   UserLogin userLogin = 7;
   string imageUrl = 8;
+  string date = 9;
 }
 
 message UserInfo {

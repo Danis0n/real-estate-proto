@@ -6,6 +6,7 @@ service UserService {
   rpc Create (CreateUserRequest) returns (CreateUserResponse) {}
   rpc FindAll (FindAllUsersRequest) returns (FindAllUsersResponse) {}
   rpc FindById (FindOneUserRequest) returns (FindOneUserResponse) {}
+  rpc CreateRole (CreateRoleRequest) returns (CreateRoleResponse) {}
 }
 
 message User {
@@ -17,6 +18,7 @@ message User {
   UserLogin userLogin = 7;
   string imageUrl = 8;
   string date = 9;
+  repeated Role roles = 10;
 }
 
 message UserInfo {
@@ -30,6 +32,19 @@ message UserInfo {
 
 message UserLogin {
   string login = 1;
+}
+
+message Role {
+  string name = 1;
+}
+
+message CreateRoleRequest {
+  string name = 1;
+}
+
+message CreateRoleResponse {
+  string status = 1;
+  Role role = 2;
 }
 
 message FindOneUserRequest {

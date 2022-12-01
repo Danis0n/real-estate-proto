@@ -24,6 +24,8 @@ message UserInfo {
   string lastName = 2;
   string birthData = 3;
   string description = 4;
+  bool locked = 5;
+  bool enabled = 6;
 }
 
 message UserLogin {

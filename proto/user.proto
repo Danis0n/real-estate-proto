@@ -4,7 +4,6 @@ package user;
 
 service UserService {
   rpc Create (CreateUserRequest) returns (CreateUserResponse) {}
-  rpc CreateUr (CreateUserRequest) returns (CreateUserResponse) {}
   rpc FindAll (FindAllUsersRequest) returns (FindAllUsersResponse) {}
   rpc FindById (FindOneUserRequest) returns (FindOneUserResponse) {}
   rpc CreateRole (CreateRoleRequest) returns (CreateRoleResponse) {}

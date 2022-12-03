@@ -75,7 +75,7 @@ message RegisterRequest {
   string lastName = 6;
   string dateOfBirth = 7;
   string inn = 8;
-  string address = 9;
+  string link = 9;
 }
 
 message RegisterResponse {

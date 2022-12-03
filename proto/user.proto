@@ -45,7 +45,7 @@ message User {
 message UserInfo {
   string firstName = 1;
   string lastName = 2;
-  string birthData = 3;
+  string birthDate = 3;
   string description = 4;
   bool locked = 5;
   bool enabled = 6;

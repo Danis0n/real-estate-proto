@@ -11,6 +11,11 @@ service UserService {
   rpc FindByEmail (FindOneUserEmailRequest) returns (FindOneUserResponse) {}
   rpc FindByPhone (FindOneUserPhoneRequest) returns (FindOneUserResponse) {}
   rpc FindByInn (FindOneUserInnRequest) returns (FindOneUserResponse) {}
+  rpc GetPassword (FindOneUserLoginRequest) returns (GetPasswordResponse) {}
+}
+
+message GetPasswordResponse {
+  string password = 1;
 }
 
 message FindOneUserLoginRequest {

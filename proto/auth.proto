@@ -56,8 +56,7 @@ message LogoutResponse {
 }
 
 message AuthRequest {
-  string uuid = 1;
-  string refreshToken = 2;
+  string refreshToken = 1;
 }
 
 message AuthResponse {

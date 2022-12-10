@@ -11,7 +11,13 @@ service AuthService {
   rpc Test (TestRequest) returns (TestResponse) {}
 }
 
-message TestRequest {}
+message TestRequest {
+  bytes buffer = 1;
+  string fieldName = 2;
+  string originalName = 3;
+  string mimetype = 4;
+  int32 size = 5;
+}
 message TestResponse {}
 
 message User {

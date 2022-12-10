@@ -8,7 +8,11 @@ service AuthService {
   rpc Auth (AuthRequest) returns (AuthResponse) {}
   rpc Validate (ValidateRequest) returns (ValidateResponse) {}
   rpc Logout (LogoutRequest) returns (LogoutResponse) {}
+  rpc Test (TestRequest) returns (TestResponse) {}
 }
+
+message TestRequest {}
+message TestResponse {}
 
 message User {
   string id = 1;

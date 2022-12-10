@@ -14,12 +14,12 @@ message ImageUserRequest {
   string originalName = 3;
   string mimetype = 4;
   int32 size = 5;
-  string uuid = 6;
 }
 
 message ImageUserResponse {
   string status = 1;
   string error = 2;
+  string uuid = 3;
 }
 
 message ImagePostRequest {
@@ -28,12 +28,12 @@ message ImagePostRequest {
   string originalName = 3;
   string mimetype = 4;
   int32 size = 5;
-  string postId = 6;
 }
 
 message ImagePostResponse {
   string status = 1;
   string error = 2;
+  string uuid = 3;
 }
 
 message ImageViewRequest {

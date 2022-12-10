@@ -12,6 +12,21 @@ service UserService {
   rpc FindByPhone (FindOneUserPhoneRequest) returns (FindOneUserResponse) {}
   rpc FindByInn (FindOneUserInnRequest) returns (FindOneUserResponse) {}
   rpc GetHashedPassword (FindOneUserLoginRequest) returns (GetHashedPasswordResponse) {}
+  rpc UploadImageToUser (UploadImageRequest) returns (UploadImageResponse) {}
+}
+
+message UploadImageRequest {
+  bytes buffer = 1;
+  string fieldName = 2;
+  string originalName = 3;
+  string mimetype = 4;
+  int32 size = 5;
+}
+
+message UploadImageResponse {
+  string status = 1;
+  string error = 2;
+  string uuid = 3;
 }
 
 message GetHashedPasswordResponse {

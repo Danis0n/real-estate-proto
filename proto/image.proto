@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package image;
+
+service ImageService {
+  rpc ImageUploadUser (ImageUserRequest) returns (ImageUserResponse) {}
+  rpc ImageUploadPost (ImagePostRequest) returns (ImagePostResponse) {}
+  rpc ImageView (ImageViewRequest) returns (ImageViewResponse) {}
+}
+
+message ImageUserRequest {
+  bytes buffer = 1;
+  string fieldName = 2;
+  string originalName = 3;
+  string mimetype = 4;
+  int32 size = 5;
+  string uuid = 6;
+}
+
+message ImageUserResponse {
+  string status = 1;
+  string error = 2;
+}
+
+message ImagePostRequest {
+  bytes buffer = 1;
+  string fieldName = 2;
+  string originalName = 3;
+  string mimetype = 4;
+  int32 size = 5;
+  string postId = 6;
+}
+
+message ImagePostResponse {
+  string status = 1;
+  string error = 2;
+}
+
+message ImageViewRequest {
+  string uuid = 1;
+}
+
+message ImageViewResponse {
+  bytes buffer = 1;
+}

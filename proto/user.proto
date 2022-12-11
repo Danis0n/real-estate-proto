@@ -21,6 +21,7 @@ message UploadImageRequest {
   string originalName = 3;
   string mimetype = 4;
   int32 size = 5;
+  string uuid = 6;
 }
 
 message UploadImageResponse {

@@ -41,5 +41,5 @@ message ImageViewRequest {
 }
 
 message ImageViewResponse {
-  bytes buffer = 1;
+  string buffer = 1;
 }

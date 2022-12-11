@@ -6,6 +6,16 @@ service ImageService {
   rpc ImageUploadUser (ImageUserRequest) returns (ImageUserResponse) {}
   rpc ImageUploadPost (ImagePostRequest) returns (ImagePostResponse) {}
   rpc ImageView (ImageViewRequest) returns (ImageViewResponse) {}
+  rpc ImageDelete (ImageDeleteRequest) returns (ImageDeleteResponse) {}
+}
+
+message ImageDeleteRequest {
+  string uuid = 1;
+}
+
+message ImageDeleteResponse {
+  string status = 1;
+  string error = 2;
 }
 
 message ImageUserRequest {

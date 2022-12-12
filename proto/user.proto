@@ -13,6 +13,16 @@ service UserService {
   rpc FindByInn (FindOneUserInnRequest) returns (FindOneUserResponse) {}
   rpc GetHashedPassword (FindOneUserLoginRequest) returns (GetHashedPasswordResponse) {}
   rpc UploadImageToUser (UploadImageRequest) returns (UploadImageResponse) {}
+  rpc DeleteImageFromUser (DeleteImageRequest) returns (DeleteImageResponse) {}
+}
+
+message DeleteImageRequest {
+  string uuid = 1;
+}
+
+message DeleteImageResponse {
+  string status = 1;
+  string error = 2;
 }
 
 message UploadImageRequest {

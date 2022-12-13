@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package post;
+
+service PostService {
+  rpc Create (CreatePostRequest) returns (CreatePostResponse) {}
+  rpc FindOne (FindOnePostRequest) returns (FindOnePostResponse) {}
+  rpc FindAll (FindAllPostRequest) returns (FindAllPostResponse) {}
+}
+
+message CreatePostRequest {
+  string name = 1;
+  string price = 2;
+  string floorHeight = 3;
+  int32 maxFloor = 4;
+  int32 currentFloor = 5;
+  string houseType = 6;
+  bool isParking = 7;
+  bool isBalcony = 8;
+  bool isRenovation = 9;
+  string roomQuantity = 10;
+  string dimensions = 11;
+  string kitchenDimensions = 12;
+  string livingDimensions = 13;
+  string buildAt = 14;
+  string description = 15;
+  string city = 16;
+  string location = 17;
+  string deal = 18;
+  string type = 19;
+}
+
+message CreatePostResponse {
+  string status = 1;
+  string error = 2;
+  Post post = 3;
+}
+
+message FindAllPostRequest {}
+
+message FindAllPostResponse {
+  repeated Post posts = 1;
+}
+
+message FindOnePostRequest {
+  string uuid = 1;
+}
+
+message FindOnePostResponse {
+  string status = 1;
+  string error = 2;
+  Post post = 3;
+}
+
+message Post {
+  string postUuid = 1;
+  string userId = 2;
+  string name = 3;
+  string dateOfCreation = 4;
+  string location = 5;
+  string city = 6;
+  string deal = 7;
+  string type = 8;
+  PostInfo info = 9;
+  repeated Image images = 10;
+}
+
+message PostInfo {
+  string infoId = 1;
+  int32 price = 2;
+  string floorHeight = 3;
+  int32 maxFloor = 4;
+  int32 currentFloor = 5;
+  string houseType = 6;
+  bool isParking = 7;
+  bool isBalcony = 8;
+  bool isRenovation = 9;
+  string roomQuantity = 10;
+  string dimensions = 11;
+  string kitchenDimensions = 12;
+  string livingDimensions = 13;
+  string buildAt = 14;
+  string description = 15;
+}
+
+message Image {
+  string imageUuid = 1;
+  string date = 2;
+}

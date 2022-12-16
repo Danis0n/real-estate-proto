@@ -32,12 +32,17 @@ message ImageUserResponse {
   string uuid = 3;
 }
 
-message ImagePostRequest {
-  bytes buffer = 1;
-  string fieldName = 2;
-  string originalName = 3;
-  string mimetype = 4;
+message ImageCreate {
+  string fieldName = 1;
+  string originalName = 2;
+  string mimetype = 3;
+  bytes buffer = 4;
   int32 size = 5;
+}
+
+message ImagePostRequest {
+  repeated ImageCreate images = 1;
+  string uuid = 2;
 }
 
 message ImagePostResponse {

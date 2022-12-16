@@ -28,6 +28,7 @@ message CreatePostRequest {
   string location = 17;
   string deal = 18;
   string type = 19;
+  string userId = 20;
 }
 
 message CreatePostResponse {

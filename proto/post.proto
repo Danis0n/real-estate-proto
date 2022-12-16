@@ -8,6 +8,15 @@ service PostService {
   rpc FindAll (FindAllPostRequest) returns (FindAllPostResponse) {}
 }
 
+message ImageCreate {
+  string fieldName = 1;
+  string originalName = 2;
+  string encoding = 3;
+  string mimetype = 4;
+  bytes buffer = 5;
+  int32 size = 6;
+}
+
 message CreatePostRequest {
   string name = 1;
   string price = 2;
@@ -29,6 +38,7 @@ message CreatePostRequest {
   string deal = 18;
   string type = 19;
   string userId = 20;
+  repeated ImageCreate images = 21;
 }
 
 message CreatePostResponse {
@@ -36,6 +46,7 @@ message CreatePostResponse {
   string error = 2;
   Post post = 3;
 }
+
 
 message FindAllPostRequest {}
 

@@ -49,6 +49,7 @@ message ImagePostResponse {
   string status = 1;
   string error = 2;
   string uuid = 3;
+  repeated string imagesUuids = 4;
 }
 
 message ImageViewRequest {

@@ -15,6 +15,16 @@ service UserService {
   rpc UploadImageToUser (UploadImageRequest) returns (UploadImageResponse) {}
   rpc DeleteImageFromUser (DeleteImageRequest) returns (DeleteImageResponse) {}
   rpc ChangePassword (ChangePasswordRequest) returns (ChangePasswordResponse) {}
+  rpc ConfirmAccount (ConfirmAccountRequest) returns (ConfirmAccountResponse) {}
+}
+
+message ConfirmAccountRequest {
+
+}
+
+message ConfirmAccountResponse {
+  string status = 1;
+  string error = 2;
 }
 
 message ChangePasswordRequest {

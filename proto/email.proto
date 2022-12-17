@@ -9,6 +9,7 @@ service EmailService {
 
 message PasswordRestoreRequest {
   string token = 1;
+  string email = 2;
 }
 
 message PasswordRestoreResponse {
@@ -18,6 +19,7 @@ message PasswordRestoreResponse {
 
 message AccountConfirmRequest {
   string token = 1;
+  string email = 2;
 }
 
 message AccountConfirmResponse {

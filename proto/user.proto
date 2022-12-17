@@ -19,7 +19,7 @@ service UserService {
 }
 
 message ConfirmAccountRequest {
-
+  string uuid = 1;
 }
 
 message ConfirmAccountResponse {

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package email;
+
+service EmailService {
+  rpc PasswordRestore (PasswordRestoreRequest) returns (PasswordRestoreResponse) {}
+  rpc AccountConfirm (AccountConfirmRequest) returns (AccountConfirmResponse) {}
+}
+
+message PasswordRestoreRequest {
+  string token = 1;
+}
+
+message PasswordRestoreResponse {
+  string status = 1;
+  string error = 2;
+}
+
+message AccountConfirmRequest {
+  string token = 1;
+}
+
+message AccountConfirmResponse {
+  string status = 1;
+  string error = 2;
+}

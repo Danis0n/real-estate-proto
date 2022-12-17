@@ -34,7 +34,7 @@ message RestorePasswordResponse {
 
 message UpdatePasswordRequest {
   string password = 1;
-  string uuid = 2;
+  string token = 2;
 }
 
 message UpdatePasswordResponse {

@@ -11,6 +11,16 @@ service AuthService {
   rpc RestorePassword (RestorePasswordRequest) returns (RestorePasswordResponse) {}
   rpc RedirectRestore (RedirectRequest) returns (RedirectResponse) {}
   rpc UpdatePassword (UpdatePasswordRequest) returns (UpdatePasswordResponse) {}
+  rpc Confirm (ConfirmRequest) returns (ConfirmResponse) {}
+}
+
+message ConfirmRequest {
+  string token = 1;
+}
+
+message ConfirmResponse {
+  string status = 1;
+  string error = 2;
 }
 
 message RedirectRequest {

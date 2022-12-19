@@ -30,6 +30,7 @@ message RedirectRequest {
 message RedirectResponse {
   string status = 1;
   string error = 2;
+  string message = 3;
 }
 
 message RestorePasswordRequest {
@@ -40,6 +41,7 @@ message RestorePasswordRequest {
 message RestorePasswordResponse {
   string status = 1;
   string error = 2;
+  string message = 3;
 }
 
 message UpdatePasswordRequest {

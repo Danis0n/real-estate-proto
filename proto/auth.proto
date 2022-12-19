@@ -21,6 +21,7 @@ message ConfirmRequest {
 message ConfirmResponse {
   string status = 1;
   string error = 2;
+  string message = 3;
 }
 
 message RedirectRequest {
@@ -41,7 +42,6 @@ message RestorePasswordRequest {
 message RestorePasswordResponse {
   string status = 1;
   string error = 2;
-  string message = 3;
 }
 
 message UpdatePasswordRequest {

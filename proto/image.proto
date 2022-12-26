@@ -14,7 +14,7 @@ message ImageDeleteRequest {
 }
 
 message ImageDeleteResponse {
-  string status = 1;
+  int32 status = 1;
   string error = 2;
 }
 
@@ -27,7 +27,7 @@ message ImageUserRequest {
 }
 
 message ImageUserResponse {
-  string status = 1;
+  int32 status = 1;
   string error = 2;
   string uuid = 3;
 }
@@ -46,7 +46,7 @@ message ImagePostRequest {
 }
 
 message ImagePostResponse {
-  string status = 1;
+  int32 status = 1;
   string error = 2;
   string uuid = 3;
   repeated string imagesUuids = 4;

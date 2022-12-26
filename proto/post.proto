@@ -41,7 +41,7 @@ message CreatePostRequest {
 }
 
 message CreatePostResponse {
-  string status = 1;
+  int32 status = 1;
   string error = 2;
   Post post = 3;
 }
@@ -57,7 +57,7 @@ message FindOnePostRequest {
 }
 
 message FindOnePostResponse {
-  string status = 1;
+  int32 status = 1;
   string error = 2;
   Post post = 3;
 }

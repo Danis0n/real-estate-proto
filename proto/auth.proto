@@ -19,7 +19,7 @@ message ConfirmRequest {
 }
 
 message ConfirmResponse {
-  string status = 1;
+  int32 status = 1;
   string error = 2;
   string message = 3;
 }
@@ -29,7 +29,7 @@ message RedirectRequest {
 }
 
 message RedirectResponse {
-  string status = 1;
+  int32 status = 1;
   string error = 2;
   string message = 3;
 }
@@ -40,7 +40,7 @@ message RestorePasswordRequest {
 }
 
 message RestorePasswordResponse {
-  string status = 1;
+  int32 status = 1;
   string error = 2;
 }
 
@@ -50,7 +50,7 @@ message UpdatePasswordRequest {
 }
 
 message UpdatePasswordResponse {
-  string status = 1;
+  int32 status = 1;
   string error = 2;
 }
 
@@ -123,7 +123,7 @@ message RegisterRequest {
 }
 
 message RegisterResponse {
-  string status = 1;
+  int32 status = 1;
   string error = 2;
 }
 
@@ -137,7 +137,7 @@ message LoginResponse {
   string refreshToken = 2;
   User user = 3;
   string error = 4;
-  string status = 5;
+  int32 status = 5;
 }
 
 message ValidateRequest {

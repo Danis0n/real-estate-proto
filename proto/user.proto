@@ -16,6 +16,31 @@ service UserService {
   rpc DeleteImageFromUser (DeleteImageRequest) returns (DeleteImageResponse) {}
   rpc ChangePassword (ChangePasswordRequest) returns (ChangePasswordResponse) {}
   rpc ConfirmAccount (ConfirmAccountRequest) returns (ConfirmAccountResponse) {}
+  rpc ChangeInfo (ChangeInfoRequest) returns (ChangeInfoResponse) {}
+  rpc ChangeCompanyInfo (ChangeCompanyInfoRequest) returns (ChangeCompanyInfoResponse) {}
+}
+
+message ChangeCompanyInfoRequest {
+  string description = 1;
+  string link = 2;
+  string address = 3;
+}
+
+message ChangeCompanyInfoResponse {
+  int32 status = 1;
+  string error = 2;
+}
+
+message ChangeInfoRequest {
+  string firstName = 1;
+  string lastName = 2;
+  string phone = 3;
+  string email = 4;
+}
+
+message ChangeInfoResponse {
+  int32 status = 1;
+  string error = 2;
 }
 
 message ConfirmAccountRequest {

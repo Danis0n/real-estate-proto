@@ -123,7 +123,7 @@ message CreateRoleRequest {
 }
 
 message CreateRoleResponse {
-  string status = 1;
+  int32 status = 1;
   Role role = 2;
 }
 

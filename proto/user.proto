@@ -8,9 +8,6 @@ service UserService {
   rpc FindById (FindOneUserRequest) returns (FindOneUserResponse) {}
   rpc CreateRole (CreateRoleRequest) returns (CreateRoleResponse) {}
   rpc FindByLogin (FindOneUserLoginRequest) returns (FindOneUserResponse) {}
-  rpc FindByEmail (FindOneUserEmailRequest) returns (FindOneUserResponse) {}
-  rpc FindByPhone (FindOneUserPhoneRequest) returns (FindOneUserResponse) {}
-  rpc FindByInn (FindOneUserInnRequest) returns (FindOneUserResponse) {}
   rpc GetHashedPassword (FindOneUserLoginRequest) returns (GetHashedPasswordResponse) {}
   rpc UploadImageToUser (UploadImageRequest) returns (UploadImageResponse) {}
   rpc DeleteImageFromUser (DeleteImageRequest) returns (DeleteImageResponse) {}
@@ -104,18 +101,6 @@ message GetHashedPasswordResponse {
 
 message FindOneUserLoginRequest {
   string login = 1;
-}
-
-message FindOneUserEmailRequest {
-  string email = 1;
-}
-
-message FindOneUserPhoneRequest {
-  string phone = 1;
-}
-
-message FindOneUserInnRequest {
-  string inn = 1;
 }
 
 message User {

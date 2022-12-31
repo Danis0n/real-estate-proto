@@ -7,7 +7,6 @@ service PostService {
   rpc FindOne (FindOnePostRequest) returns (FindOnePostResponse) {}
   rpc FindAll (FindAllPostRequest) returns (FindAllPostResponse) {}
   rpc UpdateImages (UpdateImagesRequest) returns (UpdateImagesResponse) {}
-  rpc DeleteImages (DeleteImagesRequest) returns (DeleteImagesResponse) {}
   rpc UpdatePost (UpdatePostRequest) returns (UpdatePostResponse) {}
 }
 
@@ -33,20 +32,11 @@ message UpdatePostResponse {
 
 message UpdateImagesRequest {
   string uuid = 1;
-  repeated ImageCreate images = 2;
+  repeated ImageCreate createImages = 2;
+  repeated string deleteImages = 3;
 }
 
 message UpdateImagesResponse {
-  int32 status = 1;
-  string error = 2;
-}
-
-message DeleteImagesRequest {
-  string uuid = 1;
-  repeated string images = 2;
-}
-
-message DeleteImagesResponse {
   int32 status = 1;
   string error = 2;
 }

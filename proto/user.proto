@@ -11,10 +11,10 @@ service UserService {
   rpc GetHashedPassword (FindOneUserLoginRequest) returns (GetHashedPasswordResponse) {}
   rpc UploadImageToUser (UploadImageRequest) returns (UploadImageResponse) {}
   rpc DeleteImageFromUser (DeleteImageRequest) returns (DeleteImageResponse) {}
-  rpc ChangePassword (ChangePasswordRequest) returns (ChangePasswordResponse) {}
   rpc ConfirmAccount (ConfirmAccountRequest) returns (ConfirmAccountResponse) {}
-  rpc ChangeInfo (ChangeInfoRequest) returns (ChangeInfoResponse) {}
-  rpc ChangeCompanyInfo (ChangeCompanyInfoRequest) returns (ChangeCompanyInfoResponse) {}
+  rpc UpdatePassword (UpdatePasswordRequest) returns (UpdatePasswordResponse) {}
+  rpc UpdateInfo (UpdateInfoRequest) returns (UpdateInfoResponse) {}
+  rpc UpdateCompanyInfo (UpdateCompanyInfoRequest) returns (UpdateCompanyInfoResponse) {}
   rpc CheckUser (CheckUserRequest) returns (CheckUserResponse) {}
 }
 
@@ -29,19 +29,19 @@ message CheckUserResponse {
   string error = 2;
 }
 
-message ChangeCompanyInfoRequest {
+message UpdateCompanyInfoRequest {
   string description = 1;
   string link = 2;
   string address = 3;
   string uuid = 4;
 }
 
-message ChangeCompanyInfoResponse {
+message UpdateCompanyInfoResponse {
   int32 status = 1;
   string error = 2;
 }
 
-message ChangeInfoRequest {
+message UpdateInfoRequest {
   string firstName = 1;
   string lastName = 2;
   string phone = 3;
@@ -49,7 +49,7 @@ message ChangeInfoRequest {
   string uuid = 5;
 }
 
-message ChangeInfoResponse {
+message UpdateInfoResponse {
   int32 status = 1;
   string error = 2;
 }
@@ -63,12 +63,12 @@ message ConfirmAccountResponse {
   string error = 2;
 }
 
-message ChangePasswordRequest {
+message UpdatePasswordRequest {
   string password = 1;
   string uuid = 2;
 }
 
-message ChangePasswordResponse {
+message UpdatePasswordResponse {
   int32 status = 1;
   string error = 2;
 }

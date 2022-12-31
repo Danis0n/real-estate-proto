@@ -6,6 +6,49 @@ service PostService {
   rpc Create (CreatePostRequest) returns (CreatePostResponse) {}
   rpc FindOne (FindOnePostRequest) returns (FindOnePostResponse) {}
   rpc FindAll (FindAllPostRequest) returns (FindAllPostResponse) {}
+  rpc UpdateImages (UpdateImagesRequest) returns (UpdateImagesResponse) {}
+  rpc DeleteImages (DeleteImagesRequest) returns (DeleteImagesResponse) {}
+  rpc UpdatePost (UpdatePostRequest) returns (UpdatePostResponse) {}
+}
+
+message UpdatePostRequest {
+  string name = 1;
+  string price = 2;
+  string floorHeight = 3;
+  bool isParking = 4;
+  bool isBalcony = 5;
+  bool isRenovation = 6;
+  string dimensions = 7;
+  string kitchenDimensions = 8;
+  string livingDimensions = 9;
+  string description = 10;
+  string uuid = 11;
+  string userUuid = 12;
+}
+
+message UpdatePostResponse {
+  int32 status = 1;
+  string error = 2;
+}
+
+message UpdateImagesRequest {
+  string uuid = 1;
+  repeated ImageCreate images = 2;
+}
+
+message UpdateImagesResponse {
+  int32 status = 1;
+  string error = 2;
+}
+
+message DeleteImagesRequest {
+  string uuid = 1;
+  repeated string images = 2;
+}
+
+message DeleteImagesResponse {
+  int32 status = 1;
+  string error = 2;
 }
 
 message ImageCreate {

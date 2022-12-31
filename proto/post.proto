@@ -32,8 +32,9 @@ message UpdatePostResponse {
 
 message UpdateImagesRequest {
   string uuid = 1;
-  repeated ImageCreate createImages = 2;
-  repeated string deleteImages = 3;
+  string userUuid = 2;
+  repeated ImageCreate createImages = 3;
+  repeated string deleteImages = 4;
 }
 
 message UpdateImagesResponse {

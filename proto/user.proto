@@ -176,6 +176,7 @@ message CreateUserRequest {
   string dateOfBirth = 7;
   string link = 8;
   string inn = 9;
+  string role = 10;
 }
 
 message CreateUserResponse {

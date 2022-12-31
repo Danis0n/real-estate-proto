@@ -7,6 +7,16 @@ service ImageService {
   rpc ImageUploadPost (ImagePostRequest) returns (ImagePostResponse) {}
   rpc ImageView (ImageViewRequest) returns (ImageViewResponse) {}
   rpc ImageDelete (ImageDeleteRequest) returns (ImageDeleteResponse) {}
+  rpc ImagesDelete (ImagesDeleteRequest) returns (ImagesDeleteResponse) {}
+}
+
+message ImagesDeleteRequest {
+  repeated string uuids = 1;
+}
+
+message ImagesDeleteResponse {
+  int32 status = 1;
+  string error = 2;
 }
 
 message ImageDeleteRequest {

@@ -120,6 +120,7 @@ message RegisterRequest {
   string dateOfBirth = 7;
   string inn = 8;
   string link = 9;
+  string role = 10;
 }
 
 message RegisterResponse {

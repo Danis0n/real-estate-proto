@@ -8,14 +8,13 @@ service PostService {
   rpc FindAll (FindAllPostRequest) returns (FindAllPostResponse) {}
   rpc UpdateImages (UpdateImagesRequest) returns (UpdateImagesResponse) {}
   rpc UpdatePost (UpdatePostRequest) returns (UpdatePostResponse) {}
-  rpc LockPostRequest (LockPostStateRequest) returns (LockPostStateResponse) {}
-  rpc UnLockPostRequest (LockPostStateRequest) returns (LockPostStateResponse) {}
-  rpc LockPostAdminRequest (LockPostAdminStateRequest) returns (LockPostAdminStateResponse) {}
-  rpc UnLockPostAdminRequest (LockPostAdminStateRequest) returns (LockPostAdminStateResponse) {}
+  rpc UpdateLockPostRequest (LockPostStateRequest) returns (LockPostStateResponse) {}
+  rpc UpdateLockPostAdminRequest (LockPostAdminStateRequest) returns (LockPostAdminStateResponse) {}
 }
 
 message LockPostAdminStateRequest {
   string postUUID = 1;
+  bool state = 2;
 }
 
 message LockPostAdminStateResponse {
@@ -26,6 +25,7 @@ message LockPostAdminStateResponse {
 message LockPostStateRequest {
   string postUUID = 1;
   string userUUID = 2;
+  bool state = 3;
 }
 
 message LockPostStateResponse {

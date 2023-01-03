@@ -16,12 +16,12 @@ service UserService {
   rpc UpdateInfo (UpdateInfoRequest) returns (UpdateInfoResponse) {}
   rpc UpdateCompanyInfo (UpdateCompanyInfoRequest) returns (UpdateCompanyInfoResponse) {}
   rpc CheckUser (CheckUserRequest) returns (CheckUserResponse) {}
-  rpc LockUser (LockStateRequest) returns (LockStateResponse) {}
-  rpc UnLockUser (LockStateRequest) returns (LockStateResponse) {}
+  rpc UpdateUserLock (LockStateRequest) returns (LockStateResponse) {}
 }
 
 message LockStateRequest {
   string UUID = 1;
+  bool state = 2;
 }
 
 message LockStateResponse {

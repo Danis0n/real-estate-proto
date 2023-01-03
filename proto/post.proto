@@ -14,9 +14,9 @@ message UpdatePostRequest {
   string name = 1;
   string price = 2;
   string floorHeight = 3;
-  string isParking = 4;
-  string isBalcony = 5;
-  string isRenovation = 6;
+  bool isParking = 4;
+  bool isBalcony = 5;
+  bool isRenovation = 6;
   string dimensions = 7;
   string kitchenDimensions = 8;
   string livingDimensions = 9;

@@ -6,6 +6,7 @@ service PostService {
   rpc Create (CreatePostRequest) returns (CreatePostResponse) {}
   rpc FindOne (FindOnePostRequest) returns (FindOnePostResponse) {}
   rpc FindAll (FindAllPostRequest) returns (FindAllPostResponse) {}
+  rpc FindAllUnlocked (FindAllPostRequest) returns (FindAllPostResponse) {}
   rpc UpdateImages (UpdateImagesRequest) returns (UpdateImagesResponse) {}
   rpc UpdatePost (UpdatePostRequest) returns (UpdatePostResponse) {}
   rpc UpdateLockPost (LockPostStateRequest) returns (LockPostStateResponse) {}

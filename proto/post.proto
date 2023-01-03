@@ -8,8 +8,8 @@ service PostService {
   rpc FindAll (FindAllPostRequest) returns (FindAllPostResponse) {}
   rpc UpdateImages (UpdateImagesRequest) returns (UpdateImagesResponse) {}
   rpc UpdatePost (UpdatePostRequest) returns (UpdatePostResponse) {}
-  rpc UpdateLockPostRequest (LockPostStateRequest) returns (LockPostStateResponse) {}
-  rpc UpdateLockPostAdminRequest (LockPostAdminStateRequest) returns (LockPostAdminStateResponse) {}
+  rpc UpdateLockPost (LockPostStateRequest) returns (LockPostStateResponse) {}
+  rpc UpdateLockPostAdmin (LockPostAdminStateRequest) returns (LockPostAdminStateResponse) {}
 }
 
 message LockPostAdminStateRequest {

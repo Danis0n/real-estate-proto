@@ -8,6 +8,29 @@ service PostService {
   rpc FindAll (FindAllPostRequest) returns (FindAllPostResponse) {}
   rpc UpdateImages (UpdateImagesRequest) returns (UpdateImagesResponse) {}
   rpc UpdatePost (UpdatePostRequest) returns (UpdatePostResponse) {}
+  rpc LockPostRequest (LockPostStateRequest) returns (LockPostStateResponse) {}
+  rpc UnLockPostRequest (LockPostStateRequest) returns (LockPostStateResponse) {}
+  rpc LockPostAdminRequest (LockPostAdminStateRequest) returns (LockPostAdminStateResponse) {}
+  rpc UnLockPostAdminRequest (LockPostAdminStateRequest) returns (LockPostAdminStateResponse) {}
+}
+
+message LockPostAdminStateRequest {
+  string postUUID = 1;
+}
+
+message LockPostAdminStateResponse {
+  int32 status = 1;
+  string error = 2;
+}
+
+message LockPostStateRequest {
+  string postUUID = 1;
+  string userUUID = 2;
+}
+
+message LockPostStateResponse {
+  int32 status = 1;
+  string error = 2;
 }
 
 message UpdatePostRequest {
@@ -21,8 +44,8 @@ message UpdatePostRequest {
   string kitchenDimensions = 8;
   string livingDimensions = 9;
   string description = 10;
-  string uuid = 11;
-  string userUuid = 12;
+  string UUID = 11;
+  string userUUID = 12;
 }
 
 message UpdatePostResponse {
@@ -31,8 +54,8 @@ message UpdatePostResponse {
 }
 
 message UpdateImagesRequest {
-  string uuid = 1;
-  string userUuid = 2;
+  string UUID = 1;
+  string userUUID = 2;
   repeated ImageCreate createImages = 3;
   repeated string deleteImages = 4;
 }
@@ -70,7 +93,7 @@ message CreatePostRequest {
   string location = 17;
   string deal = 18;
   string type = 19;
-  string userId = 20;
+  string userUUID = 20;
   repeated ImageCreate images = 21;
 }
 
@@ -87,7 +110,7 @@ message FindAllPostResponse {
 }
 
 message FindOnePostRequest {
-  string uuid = 1;
+  string UUID = 1;
 }
 
 message FindOnePostResponse {
@@ -97,8 +120,8 @@ message FindOnePostResponse {
 }
 
 message Post {
-  string postUuid = 1;
-  string userId = 2;
+  string postUUID = 1;
+  string userUUID = 2;
   string name = 3;
   string dateOfCreation = 4;
   string location = 5;

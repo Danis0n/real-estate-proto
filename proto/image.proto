@@ -11,7 +11,7 @@ service ImageService {
 }
 
 message ImagesDeleteRequest {
-  repeated string uuids = 1;
+  repeated string UUIDs = 1;
 }
 
 message ImagesDeleteResponse {
@@ -20,7 +20,7 @@ message ImagesDeleteResponse {
 }
 
 message ImageDeleteRequest {
-  string uuid = 1;
+  string UUID = 1;
 }
 
 message ImageDeleteResponse {
@@ -39,7 +39,7 @@ message ImageUserRequest {
 message ImageUserResponse {
   int32 status = 1;
   string error = 2;
-  string uuid = 3;
+  string UUID = 3;
 }
 
 message ImageCreate {
@@ -52,18 +52,18 @@ message ImageCreate {
 
 message ImagePostRequest {
   repeated ImageCreate images = 1;
-  string uuid = 2;
+  string UUID = 2;
 }
 
 message ImagePostResponse {
   int32 status = 1;
   string error = 2;
-  string uuid = 3;
+  string UUID = 3;
   repeated string imagesUuids = 4;
 }
 
 message ImageViewRequest {
-  string uuid = 1;
+  string UUID = 1;
 }
 
 message ImageViewResponse {

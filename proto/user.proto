@@ -16,6 +16,17 @@ service UserService {
   rpc UpdateInfo (UpdateInfoRequest) returns (UpdateInfoResponse) {}
   rpc UpdateCompanyInfo (UpdateCompanyInfoRequest) returns (UpdateCompanyInfoResponse) {}
   rpc CheckUser (CheckUserRequest) returns (CheckUserResponse) {}
+  rpc LockUser (LockStateRequest) returns (LockStateResponse) {}
+  rpc UnLockUser (LockStateRequest) returns (LockStateResponse) {}
+}
+
+message LockStateRequest {
+  string UUID = 1;
+}
+
+message LockStateResponse {
+  int32 status = 1;
+  string error = 2;
 }
 
 message CheckUserRequest {
@@ -33,7 +44,7 @@ message UpdateCompanyInfoRequest {
   string description = 1;
   string link = 2;
   string address = 3;
-  string uuid = 4;
+  string UUID = 4;
 }
 
 message UpdateCompanyInfoResponse {
@@ -46,7 +57,7 @@ message UpdateInfoRequest {
   string lastName = 2;
   string phone = 3;
   string email = 4;
-  string uuid = 5;
+  string UUID = 5;
 }
 
 message UpdateInfoResponse {
@@ -55,7 +66,7 @@ message UpdateInfoResponse {
 }
 
 message ConfirmAccountRequest {
-  string uuid = 1;
+  string UUID = 1;
 }
 
 message ConfirmAccountResponse {
@@ -65,7 +76,7 @@ message ConfirmAccountResponse {
 
 message UpdatePasswordRequest {
   string password = 1;
-  string uuid = 2;
+  string UUID = 2;
 }
 
 message UpdatePasswordResponse {
@@ -74,7 +85,7 @@ message UpdatePasswordResponse {
 }
 
 message DeleteImageRequest {
-  string uuid = 1;
+  string UUID = 1;
 }
 
 message DeleteImageResponse {
@@ -88,13 +99,13 @@ message UploadImageRequest {
   string originalName = 3;
   string mimetype = 4;
   int32 size = 5;
-  string uuid = 6;
+  string UUID = 6;
 }
 
 message UploadImageResponse {
   int32 status = 1;
   string error = 2;
-  string uuid = 3;
+  string UUID = 3;
 }
 
 message GetHashedPasswordResponse {

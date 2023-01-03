@@ -7,10 +7,15 @@ service PostService {
   rpc FindOne (FindOnePostRequest) returns (FindOnePostResponse) {}
   rpc FindAll (FindAllPostRequest) returns (FindAllPostResponse) {}
   rpc FindAllUnlocked (FindAllPostRequest) returns (FindAllPostResponse) {}
+  rpc FindAllByUser (FindAllPostByUserRequest) returns (FindAllPostResponse) {}
   rpc UpdateImages (UpdateImagesRequest) returns (UpdateImagesResponse) {}
   rpc UpdatePost (UpdatePostRequest) returns (UpdatePostResponse) {}
   rpc UpdateLockPost (LockPostStateRequest) returns (LockPostStateResponse) {}
   rpc UpdateLockPostAdmin (LockPostAdminStateRequest) returns (LockPostAdminStateResponse) {}
+}
+
+message FindAllPostByUserRequest {
+  string userUUID = 1;
 }
 
 message LockPostAdminStateRequest {

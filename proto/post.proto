@@ -107,6 +107,8 @@ message Post {
   string type = 8;
   PostInfo info = 9;
   repeated Image images = 10;
+  bool locked = 11;
+  bool lockedByAdmin = 12;
 }
 
 message PostInfo {

@@ -8,6 +8,15 @@ service ImageService {
   rpc ImageView (ImageViewRequest) returns (ImageViewResponse) {}
   rpc ImageDelete (ImageDeleteRequest) returns (ImageDeleteResponse) {}
   rpc ImagesDelete (ImagesDeleteRequest) returns (ImagesDeleteResponse) {}
+  rpc ImageViewRow (ImagesViewRowRequest) returns (ImagesViewRowResponse) {}
+}
+
+message ImagesViewRowRequest {
+  repeated string UUIDs = 1;
+}
+
+message ImagesViewRowResponse {
+  repeated string images = 1;
 }
 
 message ImagesDeleteRequest {

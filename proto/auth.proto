@@ -64,7 +64,7 @@ message User {
   UserUrInfo userUr = 8;
   string imageUrl = 9;
   string date = 10;
-  repeated Role roles = 11;
+  repeated string roles = 11;
 }
 
 message UserInfo {
